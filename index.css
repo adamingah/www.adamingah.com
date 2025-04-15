@@ -11,6 +11,8 @@ header {
 }
 
 
+a {text-decoration:none;}
+
 body{
     font-family: 'Courier New', Courier, monospace;
     text-align: left;
@@ -30,27 +32,13 @@ footer p {
     margin-bottom: 10px; /* Spacing between copyright and social media links */
 }
 
-.social-media {
-    margin-top: 10px; /* Spacing above the social media links */
-}
-
-.social-media a {
-    color: black; /* White color for the icons */
-    text-decoration: none; /* Remove underline from links */
-    margin: 0 10px; /* Spacing between icons */
-    font-size: 20px; /* Size of the icons */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-}
-
-.social-media a:hover {
-    color: #ffa500; /* Change color on hover */
-}
-
 .hover-image-text {
     position: relative;
     text-decoration: underline;
     cursor: pointer; /* Optional: change cursor to pointer */
     color: #0000ff; /* Optional: change text color */
+    text-decoration: none;
+
 }
 
 .hover-image {
