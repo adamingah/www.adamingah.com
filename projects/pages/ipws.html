@@ -4,52 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam Ingah</title>
-    <link rel="icon" type="images" href="/favicon.png">
+    <link rel="icon" href="/favicon.png">
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<header><a href="/index.html" class="header-link">Adam Ingah</a></header>
-
-<div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ViC-ll0kWiE?si=ohT9WK74MoYRZgzn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
 <body>
-    <br><br>
-    This is a project I worked on for an internet of things class. Essentially, it is a ESP32 controlled plant watering device that connects to the internet
-    and automatically waters the plant. 
+    <header><a href="/index.html" class="header-link">Adam Ingah</a></header>
 
-    <br><br>
-    The ESP32 controls a soil moisture sensor embedded in the plant, some LEDs to represent water status, and is powered by a wall charger.
-    Originally I had planned for two other componenets that didn't make the final project because of power constraints. 
+    <div style="text-align: center;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ViC-ll0kWiE?si=ohT9WK74MoYRZgzn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-    <img src="/pictures/photos/systemarchitecture.png" style="width:90%;margin: 30px;text-align: center;">
-    <br><br>
-    The first component was a battery, that allowed for the system to run for an extended period of time without needing to constantly be attatched to 
-    a wall outlet. One thing I did not consider in my system design was the power requirements of both the system, and the second componenet
+    <p>This is a project I worked on for an internet of things class. Essentially, it is a ESP32 controlled plant watering device that connects to the internet and automatically waters the plant.</p>
 
-    <br><br>
-    The second component was a water pump. The water pump was supposed to pull water from a reservoir, and feed it into the plant pot. I never had the chance
-    to implement this because the water pump needed power that my ESP32 wasn't able to supply. In my code, (had  I been able to figure the power out) I had set
-    it up to be a binary on/off to power on the pump and pump until a certain threshold is met (which is read by the moisture sensor). Below is an image of the
-    physical system itself. The pump has the barcode label around it. There is a relay to the right of it that would've powered the pump with its tubing on the left
-    
-    <img src="/pictures/photos/physicalsystem.png" style="width:90%;margin: 40px; text-align: center;">
+    <p>The ESP32 controls a soil moisture sensor embedded in the plant, some LEDs to represent water status, and is powered by a wall charger. Originally I had planned for two other componenets that didn't make the final project because of power constraints.</p>
 
-    <br><br>
-    As for cloud functionality, this is connected to the arduino cloud, which lets you monitor the data from the internet and create some widgets and graphs that 
-    help you understand the data a little better. In my video, I demonstrate some of the functionality of cloud portal, and some interesting features.
+    <img src="/pictures/photos/systemarchitecture.png" alt="System Architecture Diagram" style="width:90%;margin: 30px;text-align: center;">
 
-    <br><br>
-    I think, overall, this was a fun project for me to get into IoT devices, and I feel like a lot of the vagueness behind the "cloud" buzzword feels a little
-    less foggy after completing this class and project.
+    <p>The first component was a battery, that allowed for the system to run for an extended period of time without needing to constantly be attatched to a wall outlet. One thing I did not consider in my system design was the power requirements of both the system, and the second componenet</p>
 
+    <p>The second component was a water pump. The water pump was supposed to pull water from a reservoir, and feed it into the plant pot. I never had the chance to implement this because the water pump needed power that my ESP32 wasn't able to supply. In my code, (had  I been able to figure the power out) I had set it up to be a binary on/off to power on the pump and pump until a certain threshold is met (which is read by the moisture sensor). Below is an image of the physical system itself. The pump has the barcode label around it. There is a relay to the right of it that would've powered the pump with its tubing on the left</p>
 
+    <img src="/pictures/photos/physicalsystem.png" alt="Physical System Setup" style="width:90%;margin: 40px; text-align: center;">
+
+    <p>As for cloud functionality, this is connected to the arduino cloud, which lets you monitor the data from the internet and create some widgets and graphs that help you understand the data a little better. In my video, I demonstrate some of the functionality of cloud portal, and some interesting features.</p>
+
+    <p>I think, overall, this was a fun project for me to get into IoT devices, and I feel like a lot of the vagueness behind the "cloud" buzzword feels a little less foggy after completing this class and project.</p>
+
+<footer>
+Copyright © 2025 - Adam Danial Ingah
+</footer>
 
 </body>
-    <footer>
-        Copyright © 2025 - Adam Danial Ingah
-    </footer>
-
 </html>

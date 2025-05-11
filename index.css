@@ -1,7 +1,7 @@
 header {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    margin: 10%;
+    margin: 2em 0;
 }
 
 .header-link {
@@ -11,17 +11,16 @@ header {
 }
 
 
-a {text-decoration:none;}
-
 body{
     font-family: 'Courier New', Courier, monospace;
     text-align: left;
-    margin: 10%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
 }
 
 footer {
     font-family: 'Courier New', Courier, monospace;
-    color: #fff; /* White text color */
     text-align: center; /* Center-align text */
     padding: 20px; /* Spacing around the content */
     color: black;
@@ -34,7 +33,6 @@ footer p {
 
 .hover-image-text {
     position: relative;
-    text-decoration: underline;
     cursor: pointer; /* Optional: change cursor to pointer */
     color: #0000ff; /* Optional: change text color */
     text-decoration: none;
@@ -42,7 +40,9 @@ footer p {
 }
 
 .hover-image {
-    display: none; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
     position: absolute;
     top: 100%; /* Position below the text */
     left: 0;
@@ -54,5 +54,11 @@ footer p {
 }
 
 .hover-image-text:hover .hover-image {
-    display: block; /* Show the image on hover */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Remove underline from all anchor elements by default */
+a {
+    text-decoration: none;
 }
