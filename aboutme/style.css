@@ -313,7 +313,7 @@ a:hover {
 	text-decoration: underline;
 }
 .wrapAll {
-	width: 100%.
+	width: 100%;
 }
 .sidebar {
 	float: left;
@@ -611,3 +611,51 @@ span.user {
 		display: none;
 	}
 }
+
+      .infobox {
+        float: right;
+        clear: right;
+        margin: 0 0 1em 1em;
+        width: 280px;
+        background: #f8f9fa;
+        border: 1px solid #a2a9b1;
+        font-size: 90%;
+        line-height: 1.4;
+        box-sizing: border-box;
+      }
+      .infobox .infobox-title {
+        text-align: center;
+        font-weight: 700;
+        background: #eaecf0;
+        border-bottom: 1px solid #a2a9b1;
+        padding: 6px;
+      }
+      .infobox img {
+        display: block;
+        margin: 8px auto;
+        max-width: 250px;
+        height: auto;
+        border-radius: 6px;
+      }
+      .infobox table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .infobox th,
+      .infobox td {
+        text-align: left;
+        vertical-align: top;
+        padding: 4px 6px;
+      }
+      .infobox th {
+        width: 38%;
+        background: #f3f4f5;
+        font-weight: 600;
+        color: #202122;
+      }
+
+      /* Avoid template’s right-rail styles conflicting */
+      .articleRight, .articleRightInner { display: none; }
+      @media (max-width: 719px) {
+        .infobox { float: none; clear: both; width: 100%; margin: 0 0 .5em 0; }
+      }
