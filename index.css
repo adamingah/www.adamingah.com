@@ -58,6 +58,12 @@ footer p {
     opacity: 1;
     pointer-events: auto;
 }
+.responsive-image {
+  display: block;
+  max-width: 90%;   /* leaves white space on sides */
+  height: auto;     /* keeps aspect ratio */
+  margin: 2rem auto; /* centers the image */
+}
 
 /* Remove underline from all anchor elements by default */
 a {
