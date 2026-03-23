@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adam Ingah</title>
+  
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <main>
+    <p>
+      This is a clone of the popular browser game Agar.io, made for a class.
+      Here's the <a href="https://github.com/adamingah/520-Assignments/tree/main/final_project" target="_blank">GitHub repository</a> for the project.
+      The code sucks. I know. I made it in a week and had never done anything like it before. I learned a lot, but I don't want to look at it again.
+      Definitely my first vibe coded project, haha. I guess these days coding has sort of been trivialized. This is the readme and what it looks like.
+      Maybe one of these days can figure out how to embed the actual game in an iframe or something, but for now, enjoy the documentation and the screenshots.
+    </p>
+
+    <img
+    src="/pictures/photos/agario/start.png"
+    alt="Description of image"
+    class="responsive-image"
+    >  
+
+    <img
+    src="/pictures/photos/agario/gameplay.png"
+    alt="Description of image"
+    class="responsive-image"
+    >  
+
+    <hr>
+
+    <h2>Overview</h2>
+    <p>There is a popular internet game called Agar.io <a href="https://www.agar.io" target="_blank">(www.agar.io)</a>, which is a battle royale-esque survival game. You are a circular cell in an arena with other cells. In this arena, there are "food" particles that you eat to get bigger, allowing you to grow in size and eventually consume other players. The last player standing wins the game.</p>
+    <p>This project is a C++ implementation of that game built on top of the Enviro physics and event-driven framework. It features dynamic physical scaling, autonomous AI enemies, and a complete game-state loop.</p>
+
+    <h2>Goals</h2>
+    <p>This simulation has three big components behind it:</p>
+    <ul>
+      <li><strong>Autonomous Navigation:</strong> Path finding towards resources.</li>
+      <li><strong>Evasive Maneuvers:</strong> Logic to detect and flee from larger predators.</li>
+      <li><strong>Dynamic Scaling:</strong> Using Enviro to update physical properties in real time.</li>
+    </ul>
+
+    <h2>Key Challenges</h2>
+    <p>There are some challenges to implementing some of the logic in this game. Building a dynamic game inside a strict event-driven architecture presented several deep C++ and memory management challenges:</p>
+
+    <h3>1. Heap Corruption on Boot (fastbins & Segmentation fault)</h3>
+    <p><strong>The Challenge:</strong> Attempting to pre-populate the arena with 20 pieces of food inside the spawner's <code>init()</code> or <code>start()</code> functions caused random catastrophic server crashes. This occurred because dynamically instantiating agents (<code>add_agent</code>) forces the underlying <code>std::vector</code> to resize and reallocate memory while the Enviro server is still iterating through that same list to boot the game.</p>
+    <p><strong>The Solution:</strong> Implemented Staggered Spawning and an Event Queue. The spawner waits until the <code>update()</code> loop (after the server is fully stable) and spawns agents frame-by-frame, ensuring smooth memory allocation without iterator invalidation.</p>
+
+    <h3>2. The "Double Free" and Global Listener Trap</h3>
+    <p><strong>The Challenge:</strong> When an agent is eaten, calling <code>remove_agent(id())</code> destroys the physical body. However, the Enviro Event Manager retains the watch listeners registered in <code>init()</code>. If an event fired a millisecond later, the server attempted to execute a listener on a deleted agent's memory, resulting in a <code>std::bad_function_call</code> or double-free segfault.</p>
+    <p><strong>The Solution:</strong> Implemented the Tombstone Pattern (Object Ghosting). Agents are never actually deleted from memory. Instead, when an agent dies, it teleports entirely off-screen to (10000, 10000) and toggles an <code>is_dead</code> boolean flag. This flag immediately short-circuits all future event listeners and <code>update()</code> loops, safely retiring the object without pulling memory out from under the global server.</p>
+
+    <h3>3. Event-Driven Spatial Awareness</h3>
+    <p><strong>The Challenge:</strong> In Enviro, Process controllers cannot directly access the global server state to find other agents, making traditional "distance to nearest food" loops impossible.</p>
+    <p><strong>The Solution:</strong> Embraced the publish-subscribe architecture. Food and cells continuously broadcast their coordinates via <code>emit(Event("cell_pos", {...}))</code>. AI controllers passively listen to these broadcasts, updating their local target vectors without ever directly querying the physics engine.</p>
+
+    <h2>Installation</h2>
+    <p>Clone the repository:</p>
+    <ol>
+      <li><code>git clone &lt;it's on my page&gt;</code></li>
+      <li><code>cd 520-Assignments/final-project/</code></li>
+      <li><code>docker run -p80:80 -p8765:8765 -v $PWD:/source -it klavins/enviro:v1.61 bash</code></li>
+      <li>Make sure that (in docker environment) you are in <code>source/final_project</code> before proceeding.</li>
+    </ol>
+
+    <h2>How To Run</h2>
+    <p>In terminal:</p>
+    <ol>
+      <li><code>esm start</code></li>
+      <li><code>make clean</code></li>
+      <li><code>make</code></li>
+      <li><code>enviro</code></li>
+    </ol>
+    <p>Navigate to <a href="http://localhost" target="_blank">http://localhost</a> and play!</p>
+
+    <h2>Behavior</h2>
+    <p>This primitive version of Agar.io starts with four cells, with you controlling the blue cell. You use the WASD or arrow keys to control the cell in an omnidirectional manner. You go around the map eating food particles to increase in size. You can eat players smaller than you and equal in your size. You die to players bigger than yourself. The number on your cell is your score or how many particles you've eaten. First to 50 wins, or if the player loses, game over.</p>
+    <p>You can play immediately again after you're done by pressing enter.</p>
+
+    <h2>Sources</h2>
+    <p><strong>Google Gemini 3.1 Pro:</strong> Utilized for advanced C++ debugging, memory management strategies (identifying segfaults, double-frees, and the Tombstone pattern), and Enviro/Elma architectural logic.</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="/includes.js"></script>
+</body>
+</html>
