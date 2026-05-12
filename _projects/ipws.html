@@ -1,0 +1,24 @@
+---
+title: IoT Plant Watering System
+year: 2024
+description: An ESP32-based smart plant watering device connected to the Arduino Cloud.
+---
+<div style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ViC-ll0kWiE?si=ohT9WK74MoYRZgzn" title="IoT Plant Watering System demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%"></iframe>
+</div>
+
+<p>This is a project I worked on for an internet of things class. Essentially, it is an ESP32-controlled plant watering device that connects to the internet and automatically waters the plant.</p>
+
+<p>The ESP32 controls a soil moisture sensor embedded in the plant, some LEDs to represent water status, and is powered by a wall charger. Originally I had planned for two other components that didn't make the final project because of power constraints.</p>
+
+<img src="{{ '/assets/img/photos/systemarchitecture.png' | relative_url }}" alt="System architecture diagram" class="responsive-image">
+
+<p>The first component was a battery, that allowed for the system to run for an extended period of time without needing to constantly be attached to a wall outlet. One thing I did not consider in my system design was the power requirements of both the system, and the second component.</p>
+
+<p>The second component was a water pump. The water pump was supposed to pull water from a reservoir, and feed it into the plant pot. I never had the chance to implement this because the water pump needed power that my ESP32 wasn't able to supply. In my code, (had I been able to figure the power out) I had set it up to be a binary on/off to power on the pump and pump until a certain threshold is met (which is read by the moisture sensor). Below is an image of the physical system itself. The pump has the barcode label around it. There is a relay to the right of it that would've powered the pump with its tubing on the left.</p>
+
+<img src="{{ '/assets/img/photos/physicalsystem.png' | relative_url }}" alt="Physical system setup" class="responsive-image">
+
+<p>As for cloud functionality, this is connected to the Arduino Cloud, which lets you monitor the data from the internet and create some widgets and graphs that help you understand the data a little better. In my video, I demonstrate some of the functionality of the cloud portal, and some interesting features.</p>
+
+<p>I think, overall, this was a fun project for me to get into IoT devices, and I feel like a lot of the vagueness behind the "cloud" buzzword feels a little less foggy after completing this class and project.</p>

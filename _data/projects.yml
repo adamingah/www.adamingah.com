@@ -1,0 +1,25 @@
+- year: 2026
+  items:
+    - title: Agar.io Clone
+      slug: agario
+    - title: Polaroid Camera Prototype
+      slug: pcp
+    - title: Train Tracker
+      slug: tt
+
+- year: 2025
+  items:
+    - title: Autonomous Mobile Firefighting Robot
+      slug: amfr
+
+- year: 2024
+  items:
+    - title: IoT Plant Watering System
+      slug: ipws
+    - title: Four Bit Adder
+      slug: fba
+
+- year: 2023
+  items:
+    - title: Low Vision Magnifier
+      slug: lvm

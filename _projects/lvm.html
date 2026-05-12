@@ -1,0 +1,25 @@
+---
+title: Low Vision Magnifier
+year: 2023
+description: An open-source, low-cost disability aid built on a Raspberry Pi 4 for the Alabama Department of Rehabilitation Services.
+---
+<p>The Low Vision Magnifier was a project that I had the privilege of contributing towards during my junior year of college.
+This project was a joint effort from the UAB Design Engineering Prototyping Lab, as well as the Alabama Department of Rehabilitation
+Services. I'd like to thank Dr. Timothy Wick and Michael Papp for being good mentors on this project.</p>
+
+<img src="{{ '/assets/img/photos/lvm.jpg' | relative_url }}" alt="Low vision magnifier device" class="responsive-image">
+
+<p>Essentially, the Low Vision Magnifier is a disability aid that aims to make a cheaper and open source alternative to traditional
+<a href="https://store.humanware.com/hus/explore-12-portable-video-magnifier.html">low vision magnifiers</a>. The one linked
+here is almost $2,000 USD, which really drove the need for something like our project.</p>
+
+<img src="{{ '/assets/img/photos/budgetLVM.jpeg' | relative_url }}" alt="Budget low vision magnifier prototype" class="responsive-image">
+
+<p>This version I had made used very simple components. The base itself is made from an affordable foam material precisely laser cut,
+the hardware is running on a Raspberry Pi 4, and uses a 1080p embedded camera for the feed. Because it was running out of a Raspberry
+Pi, the peripherals and external accessories were super flexible. You could connect a wide range of different components like a mouse,
+monitor, and even different kinds of cameras based on the user's needs.</p>
+
+<p>The software was a simple script that opened the camera, zoomed in, and displayed to a monitor. There were some thoughts and attempts at
+making some extended features as well. Some of these features were things like text recognition/OCR with Tesseract, text to voice, and even
+some document scanning. Ultimately, we decided to keep it simple with just the magnification.</p>
