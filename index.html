@@ -1,47 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<table>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Ingah</title>
-    <link rel="icon" type="image" href="/favicon.png">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<table>
+---
+layout: default
+title: Adam Ingah
+description: Personal website of Adam Ingah — Electrical Engineer based in Seattle.
+permalink: /
+---
+<p>Hi, Hello, &amp; Howdy!<br>Welcome to my humble little internet page.</p>
 
-<body>
-    <div id="header"></div>  
-    <main>
-        <p>Hi, Hello, & Howdy!<br>Welcome to my humble little internet page.</p>
-   
-        <p>Here's what I look <a class="hover-image-text" target="_blank">like<img src="pictures/photos/me.JPG" alt="A photo of Adam Ingah" class="hover-image" loading="lazy"></a> 
-        <br>I am from Virginia, but I grew up in Colorado. I live in Seattle for now.</p>
- 
-        <p>I have a B.S. in Electrical Engineering from <a href="https://www.uab.edu/engineering/ece/" target="_blank">UAB</a>
-        <br>I am working towards my M.S. in Electrical Engineering at <a href="https://www.ece.uw.edu/" target="_blank">UW</a></p>
+<p>Here's what I look <a class="hover-image-text" target="_blank">like<img src="{{ '/assets/img/photos/me.JPG' | relative_url }}" alt="A photo of Adam Ingah" class="hover-image" loading="lazy"></a>
+<br>I am from Virginia, but I grew up in Colorado. I live in Seattle for now.</p>
 
-        <p>I take <a href="https://www.flickr.com/photos/adamingah/" target="_blank">pictures</a> sometimes!
-        <br>If you're trying to <a href ="contact.html">contact</a> me</p>
-       
-        <p>What I'm currently <a href ="media.html">reading/watching/hearing</a>
-        <br>Here's some more useless information<a href="aboutme/aboutme.html"> about me...</a></p>
+<p>I have a B.S. in Electrical Engineering from <a href="https://www.uab.edu/engineering/ece/" target="_blank">UAB</a>
+<br>I am working towards my M.S. in Electrical Engineering at <a href="https://www.ece.uw.edu/" target="_blank">UW</a></p>
 
-        <!-- Add maybe a section on my electronics collection -->
-    
-        <p>This is my <a class="hover-image-text" href="assets/resume.pdf" target="_blank">resume<img src="pictures/photos/resume.png" alt="Adam Ingah's resume" class="hover-image" loading="lazy"></a>,
-             this is my <a href="projects/portfolio.html">portfolio</a>.
-        <br> I'm looking for a job! #OpenToWork</p>
+<p>I take <a href="https://www.flickr.com/photos/adamingah/" target="_blank">pictures</a> sometimes!
+<br>If you're trying to <a href="{{ '/contact/' | relative_url }}">contact</a> me</p>
 
-        <p>Thanks for visitng my website!
-        <br>(This website was inspired by the <a href="https://www.contemporary-home-computing.org/prof-dr-style/" target="_blank">"Prof. Dr. Style"</a>)</p>
+<p>What I'm currently <a href="{{ '/media/' | relative_url }}">reading/watching/hearing</a>
+<br>Here's some more useless information<a href="{{ '/aboutme/aboutme.html' | relative_url }}"> about me…</a></p>
 
+<p>This is my <a class="hover-image-text" href="{{ '/assets/resume.pdf' | relative_url }}" target="_blank">resume<img src="{{ '/assets/img/photos/resume.png' | relative_url }}" alt="Adam Ingah's resume" class="hover-image" loading="lazy"></a>,
+this is my <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>.
+<br>I'm looking for a job! #OpenToWork</p>
 
-    </main>
-    <div id="footer"></div>
-
-<script src="/includes.js"></script>
-</body>
-</table>
-</html>
+<p>Thanks for visiting my website!
+<br>(This website was inspired by the <a href="https://www.contemporary-home-computing.org/prof-dr-style/" target="_blank">"Prof. Dr. Style"</a>)</p>

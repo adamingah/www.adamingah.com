@@ -1,0 +1,16 @@
+---
+layout: default
+title: Portfolio — Adam Ingah
+description: Engineering projects by Adam Ingah, grouped by year.
+permalink: /portfolio/
+---
+{% for group in site.data.projects %}
+<section class="portfolio-year">
+  {{ group.year }}
+  <ul>
+    {% for project in group.items %}
+    <li><a href="{{ '/projects/' | append: project.slug | append: '/' | relative_url }}">{{ project.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

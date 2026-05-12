@@ -1,0 +1,33 @@
+title: Adam Ingah
+description: Personal website of Adam Ingah — Electrical Engineer based in Seattle.
+url: https://adamingah.com
+author: Adam Ingah
+
+permalink: /:path/
+
+exclude:
+  - readme.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .claude
+
+keep_files:
+  - aboutme
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project

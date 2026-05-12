@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<article class="project">
+  {%- if page.title %}<h1>{{ page.title }}</h1>{%- endif %}
+  {%- if page.year %}<p class="project-meta">{{ page.year }}</p>{%- endif %}
+  {{ content }}
+  <p><a href="{{ '/portfolio/' | relative_url }}">← Back to portfolio</a></p>
+</article>
