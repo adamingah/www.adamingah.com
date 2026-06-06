@@ -12,8 +12,6 @@ exclude:
   - vendor
   - .claude
 
-keep_files:
-  - aboutme
 
 collections:
   projects:
