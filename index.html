@@ -14,7 +14,13 @@ permalink: /
 
 <p>This is my <a class="hover-image-text" href="{{ '/assets/resume.pdf' | relative_url }}" target="_blank">resume<img src="{{ '/assets/img/photos/resume.png' | relative_url }}" alt="Adam Ingah's resume" class="hover-image" loading="lazy"></a>,
 this is my <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>.
-<br>I'm looking for a job! #OpenToWork</p>
+<br>I'm looking for a job! <a href="https://www.linkedin.com/in/adamingah/" target="_blank">#OpenToWork</a></p>
 
-<p>Thanks for visiting my website!
+<p>Thanks for visiting <a id="secret-link" href="https://www.hagnimada.com" target="_blank" style="color:inherit;text-decoration:none;">my website</a>!
 <br>(This website was inspired by the <a href="https://www.contemporary-home-computing.org/prof-dr-style/" target="_blank">"Prof. Dr. Style"</a>)</p>
+
+<script>
+document.getElementById('secret-link').addEventListener('click', function() {
+  new Audio("{{ '/assets/audio/secret.mp3' | relative_url }}").play();
+});
+</script>
