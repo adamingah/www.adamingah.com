@@ -93,6 +93,7 @@ a:focus-visible {
 */
 .hover-image-text {
   position: relative;
+  display: inline-block;
   cursor: pointer;
   color: var(--color-link);
   text-decoration: none;
